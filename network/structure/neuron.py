@@ -1,4 +1,4 @@
-from network.structure.activations.sigmoid_function import SigmoidFunction
+from network.activations.sigmoid_function import SigmoidFunction
 
 
 class Neuron:

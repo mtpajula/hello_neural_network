@@ -20,3 +20,7 @@ Some basic logic.
  * Print & calc output errors to evaluate results
  * Test and refactor with multiple hidden layers. Currently only one hidden layer hardcoded
 
+## Imports
+
+    numpy
+
