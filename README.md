@@ -19,7 +19,9 @@ Some basic logic.
  * Separate models from actions
  * Print & calc output errors to evaluate results
  * Test and refactor with multiple hidden layers. Currently only one hidden layer hardcoded
-
+ * Use stochastic gradient method
+ * Bias is missing
+ 
 ## Imports
 
     numpy
