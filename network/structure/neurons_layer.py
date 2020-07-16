@@ -1,9 +1,17 @@
 from network.structure.neuron import Neuron
-from network.structure.neurons_connection import NeuronsConnection
+from network.structure.synapse import Synapse
+import enum
+
+
+class LayerType(enum.Enum):
+    INPUT = 0
+    OUTPUT = 1
+    HIDDEN = 2
 
 
 class NeuronsLayer:
-    def __init__(self, neurons):
+    def __init__(self, neurons, layer_type):
+        self.layer_type = layer_type
         self.neurons = []
         for i in range(neurons):
             self.neurons.append(Neuron())
@@ -11,12 +19,12 @@ class NeuronsLayer:
     def connect_to_layer(self, neurons_layer):
         for to_neuron in neurons_layer.neurons:
             for from_neuron in self.neurons:
-                neurons_connection = NeuronsConnection(from_neuron, to_neuron)
-                from_neuron.output_connections.append(neurons_connection)
-                to_neuron.input_connections.append(neurons_connection)
+                synapse = Synapse(from_neuron, to_neuron)
+                from_neuron.forward_synapses.append(synapse)
+                to_neuron.backward_synapses.append(synapse)
 
     def inspect(self):
-        print("LAYER")
+        print("LAYER", self.layer_type)
         for neuron in self.neurons:
             print("    ", end="")
             neuron.inspect()
