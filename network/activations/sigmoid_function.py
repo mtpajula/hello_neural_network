@@ -1,4 +1,4 @@
-import numpy as np
+import math
 
 
 class SigmoidFunction:
@@ -7,7 +7,7 @@ class SigmoidFunction:
 
     def activate(self, value):
         # Sigmoid?
-        return 1 / (1 + np.exp(-value))
+        return 1 / (1 + math.exp(-value))
         # Rectified
         # return max(0.0, value)
 
